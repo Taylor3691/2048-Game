@@ -1,0 +1,35 @@
+#pragma once
+#include "newGame_Funtion.h"
+int scs(int n);
+pair<int, int> generateRandomPosition(Broad* broad);
+void addNewUnit(Broad* broad);
+Broad* creatBroad(GamePlay* game);
+int findHighestScore();
+void goUp(GamePlay* game);
+void goDown(GamePlay* game);
+void goRight(GamePlay* game);
+void goLeft(GamePlay* game);
+bool isBroadChanged(int** before, int** after, int size);
+int getTimePlay(high_resolution_clock::time_point& timeStart, seconds extra = 0s);
+bool isGameLose(GamePlay* game);
+void writeTopList(AccountList l);
+void deleteGame(GamePlay* game);
+void saveRecord(GamePlay* game);
+void swapNode(AccountList& l, Account* i, Account* j);
+void sortList(AccountList& l);
+bool isAccountOnTop(AccountList l, GamePlay* game);
+void deleteAccount(Account* current);
+void addNewTopPlayer(AccountList& l, Account* source);
+void updateRank(AccountList& l, GamePlay* game);
+bool areYouInTop20(AccountList l, GamePlay* game);
+void printTopRank();
+void checkWin1(GamePlay* game, int& status, int& winFlag, high_resolution_clock::time_point& timeStart, chrono::seconds extraTime);
+void checkWin2(GamePlay* game, int& status, int& winFlag,high_resolution_clock::time_point& timeStart, chrono::seconds extraTime);
+void checkLose1(GamePlay* game, int& status, int& loseFlag, high_resolution_clock::time_point& timeStart, chrono::seconds extraTime);
+void checkLose2(GamePlay* game, int& status, int& loseFlag, high_resolution_clock::time_point& timeStart, chrono::seconds extraTime);
+void saveGame(GamePlay* game, int index);
+void exitGame2(int& status, GamePlay* game);
+void exitGame1(int& status, GamePlay* game);
+void applyMove(char command, GamePlay* game, high_resolution_clock::time_point& timeStart, chrono::seconds extraTime);
+void printScreenGame2(GamePlay* game);
+void printScreenGame1(GamePlay* game);
